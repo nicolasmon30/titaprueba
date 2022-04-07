@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bundle.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="header"> 
+        <nav class="header__nav">
+            <div class="header__logo">
+                <a href="">
+                    <img class="header__logo__img" src="img/header/logo.svg" alt="">
+                </a>
+            </div>
+            <ul class="header__menu">
+                <li class="header__menu__item header__menu__item--active">
+                    <a class="header__menu__item__link" href="#">
+                        All
+                    </a>
+                </li>
+                <li class="header__menu__item">
+                    <a class="header__menu__item__link regular" href="#">
+                        Branding
+                    </a>
+                </li>
+                <li class="header__menu__item">
+                    <a class="header__menu__item__link regular" href="#">
+                        Web
+                    </a>
+                </li>
+                <li class="header__menu__item">
+                    <a class="header__menu__item__link regular" href="#">
+                        Photography
+                    </a>
+                </li>
+                <li class="header__menu__item">
+                    <a class="header__menu__item__link regular" href="#">
+                        App
+                    </a>
+                </li>
+                <li class="header__menu__item">
+                    <img src="img/header/search.svg" alt="">
+                </li>
+            </ul>
+            <div class="header__hamburguer">
+                <div class="header__hamburguer__open">
+                    <img src="img/header/menu.png" alt="">
+                </div>
+                <div class="header__hamburguer__close">
+                    <img src="img/header/close.png" alt="">
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="banner">
+        <div class="banner__content">
+            <h1 class="bold">
+                explore beyond horizon
+            </h1>
+            <p class="regular">
+                Magna mundi referrentur quo, no rebum dignissim qui. Per quodsi accusata id, agam labore.
+            </p>
+            <a href="#" class="btn regular">
+                view our work
+            </a>
+        </div>
+    </div>
+    <section class="tabs">
+        <ul class="tabs__box">
+            <li class="tabs__estructure"><img src="img/general/block.svg" alt="" class="tabs__estructure--block"></li>
+            <li class="tabs__estructure"><img src="img/general/column.svg" alt="" class="tabs__estructure--column"></li>
+        </ul>
+        <ul class="tabs__filters">
+            <li class="tabs__filters__item tabs__filters__item--active regular" data-category="all">All</li>
+            <li class="tabs__filters__item regular" data-category="branding">Branding</li>
+            <li class="tabs__filters__item regular" data-category="web">Web</li>
+            <li class="tabs__filters__item regular" data-category="photography">Photography</li>
+            <li class="tabs__filters__item regular" data-category="app">App</li>
+        </ul>
+        <div class="tabs__panel tabs__panel--columns">
+            <template>
+                <div class="cards" id="resource">
+                    <div class="cards__thumbnail">
+                        <img src="" alt="">
+                    </div>
+                    <div class="cards__information">
+                        <h3 class="bold"></h3>
+                        <p class="regular"></p>
+                    </div>
+                </div>
+            </template>
+        </div>
+        <div class="tabs__loadMore">
+            <a id="loadMore" href="" class="btn btn--active regular">Show Me More</a>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer__copyright">
+            <p class="regular">
+                © 2016 - <a href="" class="link">Sneak</a> All Right Reserved
+            </p>
+        </div>
+        <ul class="footer__social">
+            <li class="footer__social__item"><a href=""><img src="img/footer/fb.svg" alt=""></a></li>
+            <li class="footer__social__item"><a href=""><img src="img/footer/tw.svg" alt=""></a></li>
+            <li class="footer__social__item"><a href=""><img src="img/footer/db.svg" alt=""></a></li>
+            <li class="footer__social__item"><a href=""><img src="img/footer/gl.svg" alt=""></a></li>
+            <li class="footer__social__item"><a href=""><img src="img/footer/yt.svg" alt=""></a></li>
+        </ul>
+    </footer>
+
+
+    <script src="js/bundle.js"></script>
+</body>
+</html>

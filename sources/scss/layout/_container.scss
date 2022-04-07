@@ -1,0 +1,156 @@
+.tabs {
+    padding: 70px 0;
+
+    &__box {
+        padding: 0;
+        margin: 0 0 70px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__estructure {
+        &:not(:last-child) {
+            margin: 0 30px 0 0;
+        }
+    }
+
+    &__filters {
+        padding: 0;
+        margin: 0 0 70px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include mq(mobs){
+            flex-wrap: wrap;
+            flex-direction: column;
+        }
+        &__item {
+            padding: 10px 25px;
+            color: $black;
+            letter-spacing: 3px;
+            @include rhythm(14, 14);
+            cursor: pointer;
+
+            &:not(:last-child) {
+                margin: 0 35px 0 0;
+            }
+
+            &--active {
+                background-color: $pink;
+                color: $white;
+            }
+            @include mq(mobs){
+                margin: 0 0 0.5em!important;
+            }
+        }
+    }
+
+    &__panel {
+        gap: 1em;
+        width: 100%;
+        max-width: 1160px;
+        margin: 0 auto;
+        transition: .3s all ease-out;
+        &--columns{
+            display: column;
+            columns: 3;
+            @include mq(lapS3){
+                max-width: 100%;
+                padding: 0 1em;
+            }
+            @include mq(mobs){
+                columns: 1;
+            }
+    
+            &>* {
+                break-inside: avoid;
+                margin-bottom: 1em;
+            }
+        }
+        &--block{
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+
+    /* &__panel{
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+grid-template-columns: repeat(3, 1fr);
+    break-inside: avoid;
+    grid-gap: 30px; 
+   } */
+    &__loadMore {
+        text-align: center;
+        margin: 40px 0 0;
+    }
+}
+
+.cards {
+    position: relative;
+    overflow: hidden;
+
+    &__hidden {
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        width: 1px;
+        margin: -1px;
+        padding: 0;
+        border: 0;
+    }
+
+    &:hover {
+        .cards {
+            &__information {
+                transform: translate3d(0, 0, 0);
+            }
+        }
+    }
+
+    &__information {
+        background-color: $pink;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        position: absolute;
+        width: 100%;
+        top: 0;
+        transition: transform 600ms;
+        transform: translate3d(0, calc(100% - 0rem), 0);
+        h3,p{
+            color: $white;
+        }
+        h3{
+            @include rhythm(19,21);
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            padding: 0 0 1em;
+            border-bottom: 2px solid $white;
+        }
+        p{
+            @include rhythm(20,21);
+            letter-spacing: 4px;
+            text-transform: capitalize;
+            margin: 1em 0 0;
+        }
+    }
+}
+
+@supports (grid-template-rows: masonry) {
+    .tabs__panel {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: masonry;
+        grid-auto-flow: dense;
+
+        &>* {
+            margin-bottom: 0em;
+        }
+    }
+}

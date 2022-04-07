@@ -1,0 +1,32 @@
+/* VARIABLES */
+
+$mediaqueries:(
+    hover: "(hover:hover)",
+    ie: "screen and (-ms-high-contrast: active), (-ms-high-contrast:none)",
+    safari: "screen and (min-color-index:0) and (-webkit-min-device-pixel-ratio:0)",
+    safari2: "not all and (min-resolution:.001dpcm)",
+    mobs4: 360,
+    mobs3: 375,
+    mobs2: 480,
+    mobs: 540,
+    mob: 768,
+    tabS: 820,
+    tab: 991,
+    lapS3: 1024,
+    lapS2: 1199,
+    lapS: 1280,
+    lap: 1367,
+    deskS: 1440,
+    desk: 1560,
+    deskB: 1680
+);
+
+
+// Colors
+
+$pink : #fc758c;
+$white : #ffffff;
+$black: #707070;
+
+// GLOBAL FONT
+$baseFont: 16;

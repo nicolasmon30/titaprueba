@@ -1,0 +1,16 @@
+.btn{
+    display: inline-block;
+    background-color: $white;
+    color: $pink;
+    @include rhythm(12,12);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 10px 15px;
+    &--active{
+        background-color: $pink;
+        color: $white;
+    }
+}
+.link{
+    color: $pink;
+}

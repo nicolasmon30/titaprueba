@@ -1,0 +1,91 @@
+.header{
+    &__nav{
+        padding: 32px 100px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include mq(lapS3){
+            padding: 32px 1em;
+        }
+    }
+    &__hamburguer{
+        display: none;
+        @include mq(lapS3){
+            display: block;
+        }
+        &__close{
+            display: none;
+            img{
+                width: 25px;
+                height: auto;
+            }
+        }
+        &--active{
+            .header{
+                &__hamburguer{
+                    &__close{
+                        display: block;
+                    }
+                    &__open{
+                        display: none;
+                    }
+                } 
+            }
+        }
+    }
+    &__menu{
+        padding: 0;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        @include mq(lapS3){
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: calc(100vh - 103px);
+            top: 103px;
+            transform: translateX(-100%);
+            flex-wrap: wrap;
+            flex-direction: column;
+            justify-content: center;
+            background-color: $white;
+            z-index: 9;
+            transition: .3s all ease-out;
+        }
+        &--active{
+            transform: translateX(0%);
+        }
+        &__item{
+            margin: 0;
+            &--active{
+                .header{
+                    &__menu{
+                        &__item{
+                            &__link{
+                                background-color: $pink;
+                                color: $white;
+                                @include mq(lapS3){
+                                    background-color: transparent;
+                                    color: $black;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &:not(:last-child){
+                margin-right: 20px;
+            }
+            &__link{
+                padding: 10px 25px;
+                color: $black;
+                letter-spacing: 3px;
+                @include rhythm(14,14);
+            }
+            @include mq(lapS3){
+                margin: 0 0 1em !important;
+            }
+        }
+    }
+}

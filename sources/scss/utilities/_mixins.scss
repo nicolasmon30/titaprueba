@@ -1,0 +1,38 @@
+/* MIXINS */
+
+// MEDIAQUERIES
+
+@mixin mq($media){
+    @if type-of($media) == number {
+        @if unitless($media){
+            @media only screen and (max-width: #{$media}px){
+                @content;
+            }
+        }
+    } @else{
+        @if type-of(map-get($mediaqueries,$media)) == number {
+            @media only screen and (max-width: #{map-get($mediaqueries,$media)}px){
+                @content;
+            }
+        } @else if type-of(map-get($mediaqueries,$media)) == string {
+            @media #{map-get($mediaqueries,$media)}{
+                @content;
+            }
+        }
+    }
+}
+
+@mixin font-size($sizeValue: 12 ){
+    font-size: $sizeValue + px;
+    font-size: (0.0625 * $sizeValue) + rem;
+  }
+  
+  @mixin line-height($heightValue: 20 ){
+    line-height: $heightValue + px;
+    line-height: (0.0625 * $heightValue) + rem;
+  }
+  
+  @mixin rhythm($sizeValue: 12, $heightValue: 20) {
+    @include font-size($sizeValue);
+    @include line-height($heightValue);
+  }
